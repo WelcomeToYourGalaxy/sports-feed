@@ -1,0 +1,38 @@
+{
+ "generated": "1970-01-01T00:00:00Z",
+ "items": [],
+ "counts": {
+  "stories": 0,
+  "new_this_run": 0,
+  "languages": 0,
+  "notable": 0,
+  "refused": 0,
+  "by_standing": {},
+  "wires_ok": 0,
+  "wires_total": 0
+ },
+ "notable_score": 3,
+ "languages": [],
+ "standings": [
+  {
+   "id": "official",
+   "label": "Regulators, courts & governing bodies"
+  },
+  {
+   "id": "research",
+   "label": "Research & integrity monitoring"
+  },
+  {
+   "id": "press",
+   "label": "Press"
+  },
+  {
+   "id": "rights",
+   "label": "Athlete, fan & welfare organisations"
+  }
+ ],
+ "topics": [],
+ "coords": {},
+ "geo": [],
+ "sources": []
+}
