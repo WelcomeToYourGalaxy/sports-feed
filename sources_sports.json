@@ -1,1609 +1,2367 @@
 {
-  "_note": [
-    "Sources for the sports wire.",
-    "",
-    "This is a feed on the industry, not on the games. Results, fixtures,",
-    "transfers, previews, player ratings and medal tables are refused by the gate",
-    "- that is nearly all sports coverage, and none of it is the subject.",
-    "",
-    "The animal racing and rodeo subject comes from the animal-industries section",
-    "of the page rather than the sports section, which labels it 'Animal Racing",
-    "and Other Animal Sports'. It is carried here because it is the same activity.",
-    "",
-    "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
-    "  Nothing invented - an untested feed URL reports itself unreachable on every",
-    "  harvest and quietly makes the coverage figure a lie.",
-    "",
-    "  As with the science and entertainment wires, the direct list is uneven for",
-    "  this subject. The rights and anti-corruption feeds carry the labour,",
-    "  mega-event and governance half well. Nothing here covers sports integrity,",
-    "  doping or club finance directly, so the events block carries that half.",
-    "",
-    "gnews: Google News locale searches; the harvester builds the URL from",
-    "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
-    "",
-    "events: subject searches for integrity units, regulators, courts and research.",
-    "",
-    "standing is provenance, not importance:",
-    "  official  regulators, courts, governing bodies, anti-doping agencies",
-    "  research  integrity, concentration, health and cost research",
-    "  press     general news across the locales",
-    "  rights    athlete, fan and animal welfare organisations",
-    "",
-    "Add next, with URLs you have opened: Play the Game, Sport Resolutions, the",
-    "Sports Integrity Initiative, WADA, the Court of Arbitration for Sport, FIFPRO,",
-    "the World Players Association, Animal Aid's racing deaths tracker, and Grey2K."
-  ],
-  "direct": [
-    {
-      "name": "OHCHR — news",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.ohchr.org/en/rss/news"
-    },
-    {
-      "name": "UN News — Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
-    },
-    {
-      "name": "UN Special Procedures",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.ohchr.org/en/rss/special-procedures"
-    },
-    {
-      "name": "European Court of Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.echr.coe.int/rss"
-    },
-    {
-      "name": "European Commission",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://ec.europa.eu/commission/presscorner/api/rss"
-    },
-    {
-      "name": "US Department of Justice",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
-    },
-    {
-      "name": "Europol",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.europol.europa.eu/rss.xml"
-    },
-    {
-      "name": "OECD",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.oecd.org/newsroom/index.xml"
-    },
-    {
-      "name": "Council of Europe · anti-torture",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.coe.int/en/web/cpt/-/rss"
-    },
-    {
-      "name": "Transparency International",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.transparency.org/en/rss"
-    },
-    {
-      "name": "Business & Human Rights Resource Centre",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.business-humanrights.org/en/rss/"
-    },
-    {
-      "name": "Bellingcat",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.bellingcat.com/feed/"
-    },
-    {
-      "name": "Global Witness",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.globalwitness.org/en/rss/"
-    },
-    {
-      "name": "Freedom House",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://freedomhouse.org/rss.xml"
-    },
-    {
-      "name": "CIVICUS Monitor",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://monitor.civicus.org/feed/"
-    },
-    {
-      "name": "ODI",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://odi.org/en/feed/"
-    },
-    {
-      "name": "CEPR",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://cepr.org/rss.xml"
-    },
-    {
-      "name": "Tax Justice Network",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://taxjustice.net/feed/"
-    },
-    {
-      "name": "Human Rights Watch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.hrw.org/rss/news"
-    },
-    {
-      "name": "Amnesty International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.amnesty.org/en/rss/"
-    },
-    {
-      "name": "Front Line Defenders",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.frontlinedefenders.org/rss.xml"
-    },
-    {
-      "name": "World Organisation Against Torture (OMCT)",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.omct.org/en/rss"
-    },
-    {
-      "name": "Article 19",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.article19.org/feed/"
-    },
-    {
-      "name": "Statewatch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.statewatch.org/rss/"
-    },
-    {
-      "name": "Privacy International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://privacyinternational.org/rss.xml"
-    },
-    {
-      "name": "Public Citizen · Global Trade Watch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.citizen.org/feed/"
-    },
-    {
-      "name": "Corporate Europe Observatory",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://corporateeurope.org/en/rss.xml"
-    },
-    {
-      "name": "Harm Reduction International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://hri.global/feed/"
-    },
-    {
-      "name": "The Intercept",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://theintercept.com/feed/?rss"
-    },
-    {
-      "name": "The Marshall Project",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://www.themarshallproject.org/rss/recent.rss"
-    }
-  ],
-  "gnews": [
-    {
-      "label": "English (US) 1",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "English (US) 2",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "English (US) 3",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "English (UK) 4",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "English (UK) 5",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "English (UK) 6",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "English (India) 7",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "English (India) 8",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "English (India) 9",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "English (Nigeria) 10",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "English (Nigeria) 11",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "English (Nigeria) 12",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "English (South Africa) 13",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "English (South Africa) 14",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "English (South Africa) 15",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "English (Australia) 16",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "English (Australia) 17",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "English (Australia) 18",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    },
-    {
-      "label": "English (Kenya) 19",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "eligibility rules sport ruling OR classification review para"
-    },
-    {
-      "label": "English (Kenya) 20",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"stadium subsidy\" OR taxpayer stadium cost OR ticket price cap"
-    },
-    {
-      "label": "English (Kenya) 21",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "sport carbon footprint OR fossil fuel sponsorship sport"
-    },
-    {
-      "label": "English (Philippines) 22",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"horse racing\" deaths OR welfare inquiry OR greyhound racing ban"
-    },
-    {
-      "label": "English (Philippines) 23",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "rodeo ban OR bullfighting ruling OR animal racing welfare"
-    },
-    {
-      "label": "English (Philippines) 24",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"independent regulator\" football OR sports governance bill"
-    },
-    {
-      "label": "Spanish (Spain) 25",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "Spanish (Spain) 26",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "Spanish (Spain) 27",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "Spanish (Mexico) 28",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "Spanish (Mexico) 29",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "Spanish (Mexico) 30",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "Spanish (Argentina) 31",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "Spanish (Argentina) 32",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "Spanish (Argentina) 33",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "Spanish (Colombia) 34",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "Spanish (Colombia) 35",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "Spanish (Colombia) 36",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "French (France) 37",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "French (France) 38",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "French (France) 39",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "French (Senegal) 40",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "French (Senegal) 41",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "French (Senegal) 42",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    },
-    {
-      "label": "French (Canada) 43",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "eligibility rules sport ruling OR classification review para"
-    },
-    {
-      "label": "French (Canada) 44",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"stadium subsidy\" OR taxpayer stadium cost OR ticket price cap"
-    },
-    {
-      "label": "French (Canada) 45",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "sport carbon footprint OR fossil fuel sponsorship sport"
-    },
-    {
-      "label": "Portuguese (Brazil) 46",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"horse racing\" deaths OR welfare inquiry OR greyhound racing ban"
-    },
-    {
-      "label": "Portuguese (Brazil) 47",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "rodeo ban OR bullfighting ruling OR animal racing welfare"
-    },
-    {
-      "label": "Portuguese (Brazil) 48",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"independent regulator\" football OR sports governance bill"
-    },
-    {
-      "label": "Portuguese (Portugal) 49",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "Portuguese (Portugal) 50",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "Portuguese (Portugal) 51",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "Portuguese (Angola) 52",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "Portuguese (Angola) 53",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "Portuguese (Angola) 54",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "German (Germany) 55",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "German (Germany) 56",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "German (Germany) 57",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "German (Austria) 58",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "German (Austria) 59",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "German (Austria) 60",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "Russian (Russia) 61",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "Russian (Russia) 62",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "Russian (Russia) 63",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "Russian (Kazakhstan) 64",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "Russian (Kazakhstan) 65",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "Russian (Kazakhstan) 66",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    },
-    {
-      "label": "Arabic (Egypt) 67",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "eligibility rules sport ruling OR classification review para"
-    },
-    {
-      "label": "Arabic (Egypt) 68",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"stadium subsidy\" OR taxpayer stadium cost OR ticket price cap"
-    },
-    {
-      "label": "Arabic (Egypt) 69",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "sport carbon footprint OR fossil fuel sponsorship sport"
-    },
-    {
-      "label": "Arabic (UAE) 70",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"horse racing\" deaths OR welfare inquiry OR greyhound racing ban"
-    },
-    {
-      "label": "Arabic (UAE) 71",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "rodeo ban OR bullfighting ruling OR animal racing welfare"
-    },
-    {
-      "label": "Arabic (UAE) 72",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"independent regulator\" football OR sports governance bill"
-    },
-    {
-      "label": "Arabic (Lebanon) 73",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "Arabic (Lebanon) 74",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "Arabic (Lebanon) 75",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "Chinese (Mainland) 76",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "Chinese (Mainland) 77",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "Chinese (Mainland) 78",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "Chinese (Taiwan) 79",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "Chinese (Taiwan) 80",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "Chinese (Taiwan) 81",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "Chinese (Hong Kong) 82",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "Chinese (Hong Kong) 83",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "Chinese (Hong Kong) 84",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "Hindi (India) 85",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "Hindi (India) 86",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "Hindi (India) 87",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "Bengali (Bangladesh) 88",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "Bengali (Bangladesh) 89",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "Bengali (Bangladesh) 90",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    },
-    {
-      "label": "Indonesian 91",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "eligibility rules sport ruling OR classification review para"
-    },
-    {
-      "label": "Indonesian 92",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"stadium subsidy\" OR taxpayer stadium cost OR ticket price cap"
-    },
-    {
-      "label": "Indonesian 93",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "sport carbon footprint OR fossil fuel sponsorship sport"
-    },
-    {
-      "label": "Japanese 94",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"horse racing\" deaths OR welfare inquiry OR greyhound racing ban"
-    },
-    {
-      "label": "Japanese 95",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "rodeo ban OR bullfighting ruling OR animal racing welfare"
-    },
-    {
-      "label": "Japanese 96",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"independent regulator\" football OR sports governance bill"
-    },
-    {
-      "label": "Korean 97",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "Korean 98",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "Korean 99",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "Turkish 100",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "Turkish 101",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "Turkish 102",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "Italian 103",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "Italian 104",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "Italian 105",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "Dutch 106",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "Dutch 107",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "Dutch 108",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "Polish 109",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "Polish 110",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "Polish 111",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "Swedish 112",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "Swedish 113",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "Swedish 114",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    },
-    {
-      "label": "Ukrainian 115",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "eligibility rules sport ruling OR classification review para"
-    },
-    {
-      "label": "Ukrainian 116",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"stadium subsidy\" OR taxpayer stadium cost OR ticket price cap"
-    },
-    {
-      "label": "Ukrainian 117",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "sport carbon footprint OR fossil fuel sponsorship sport"
-    },
-    {
-      "label": "Greek 118",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"horse racing\" deaths OR welfare inquiry OR greyhound racing ban"
-    },
-    {
-      "label": "Greek 119",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "rodeo ban OR bullfighting ruling OR animal racing welfare"
-    },
-    {
-      "label": "Greek 120",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"independent regulator\" football OR sports governance bill"
-    },
-    {
-      "label": "Persian 121",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "\"match-fixing\" charges OR investigation OR suspicious betting alerts"
-    },
-    {
-      "label": "Persian 122",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "\"spot-fixing\" OR player banned betting OR integrity unit investigation"
-    },
-    {
-      "label": "Persian 123",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "\"sports betting\" regulation OR gambling advertising ban sport"
-    },
-    {
-      "label": "Vietnamese 124",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"gambling harm\" sport OR betting sponsorship shirt ban"
-    },
-    {
-      "label": "Vietnamese 125",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "federation corruption OR ethics committee OR governing body suspended"
-    },
-    {
-      "label": "Vietnamese 126",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "FIFA OR IOC investigation OR reform OR governance ruling"
-    },
-    {
-      "label": "Thai 127",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "doping ban OR WADA appeal OR \"Court of Arbitration for Sport\" ruling"
-    },
-    {
-      "label": "Thai 128",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"state-sponsored doping\" OR sample tampering OR anti-doping agency"
-    },
-    {
-      "label": "Thai 129",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"equal pay\" athletes OR prize money gap OR players union agreement"
-    },
-    {
-      "label": "Swahili (Kenya) 130",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"collective bargaining\" league players OR athlete strike"
-    },
-    {
-      "label": "Swahili (Kenya) 131",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"migrant workers\" stadium OR World Cup labour OR worker deaths construction"
-    },
-    {
-      "label": "Swahili (Kenya) 132",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "safeguarding sport abuse inquiry OR coach banned misconduct"
-    },
-    {
-      "label": "Amharic (Ethiopia) 133",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"student-athlete\" OR college athlete NIL rules OR academy welfare"
-    },
-    {
-      "label": "Amharic (Ethiopia) 134",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "Olympic bid cost OR World Cup hosting budget OR stadium public funding"
-    },
-    {
-      "label": "Amharic (Ethiopia) 135",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "sportswashing OR sovereign wealth club takeover OR owners test"
-    },
-    {
-      "label": "Hausa (Nigeria) 136",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"financial fair play\" OR points deduction OR club administration"
-    },
-    {
-      "label": "Hausa (Nigeria) 137",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"broadcast rights\" sport OR listed events OR free-to-air review"
-    },
-    {
-      "label": "Hausa (Nigeria) 138",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "concussion lawsuit players OR CTE study OR brain injury sport"
-    }
-  ],
-  "events": [
-    {
-      "label": "Match-fixing and integrity units",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "match-fixing prosecution OR sports integrity unit report OR betting alerts figures"
-    },
-    {
-      "label": "Gambling regulation in sport",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "gambling commission sport OR betting advertising rules OR licence action operator"
-    },
-    {
-      "label": "Governing body governance",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "federation suspended OR ethics committee ruling OR governance audit sport"
-    },
-    {
-      "label": "Anti-doping decisions",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "WADA compliance OR doping sanction OR CAS award doping"
-    },
-    {
-      "label": "Court rulings in sport",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"Court of Arbitration for Sport\" ruling OR sports law judgment OR transfer system ruling"
-    },
-    {
-      "label": "Mega-event costs and labour",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "Olympic cost overrun study OR World Cup migrant labour report OR event displacement"
-    },
-    {
-      "label": "Sports integrity research",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "match-fixing prevalence study OR sports corruption research OR betting integrity data"
-    },
-    {
-      "label": "Concussion and health research",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "concussion study players OR CTE research OR dementia footballers findings"
-    },
-    {
-      "label": "Ownership and finance",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "club ownership analysis OR private equity sport investment OR multi-club rules"
-    },
-    {
-      "label": "Athlete organising",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "players union recognition OR athlete collective action OR equal pay campaign"
-    },
-    {
-      "label": "Safeguarding campaigns",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "athlete abuse inquiry OR safeguarding reform sport OR survivors sport"
-    },
-    {
-      "label": "Fan and ticketing campaigns",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "ticket price protest OR safe standing OR supporters trust ownership"
-    },
-    {
-      "label": "Animal racing welfare",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "horse racing deaths campaign OR greyhound ban OR rodeo welfare protest"
-    },
-    {
-      "label": "Sport and climate",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "sport emissions report OR climate risk fixtures OR winter games snow viability"
-    },
-    {
-      "label": "Broadcast and access",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "listed events review OR broadcast rights ruling OR piracy blocking sport"
-    },
-    {
-      "label": "Eligibility and classification",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "eligibility policy federation OR classification review para sport ruling"
-    }
-  ]
+ "_note": [
+  "Sources for the sports wire.",
+  "",
+  "This is a feed on the industry, not on the games. Results, fixtures,",
+  "transfers, previews, player ratings and medal tables are refused by the gate",
+  "- that is nearly all sports coverage, and none of it is the subject.",
+  "",
+  "The animal racing and rodeo subject comes from the animal-industries section",
+  "of the page rather than the sports section, which labels it 'Animal Racing",
+  "and Other Animal Sports'. It is carried here because it is the same activity.",
+  "",
+  "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
+  "  Nothing invented - an untested feed URL reports itself unreachable on every",
+  "  harvest and quietly makes the coverage figure a lie.",
+  "",
+  "  As with the science and entertainment wires, the direct list is uneven for",
+  "  this subject. The rights and anti-corruption feeds carry the labour,",
+  "  mega-event and governance half well. Nothing here covers sports integrity,",
+  "  doping or club finance directly, so the events block carries that half.",
+  "",
+  "gnews: Google News locale searches; the harvester builds the URL from",
+  "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
+  "",
+  "events: subject searches for integrity units, regulators, courts and research.",
+  "",
+  "standing is provenance, not importance:",
+  "  official  regulators, courts, governing bodies, anti-doping agencies",
+  "  research  integrity, concentration, health and cost research",
+  "  press     general news across the locales",
+  "  rights    athlete, fan and animal welfare organisations",
+  "",
+  "Add next, with URLs you have opened: Play the Game, Sport Resolutions, the",
+  "Sports Integrity Initiative, WADA, the Court of Arbitration for Sport, FIFPRO,",
+  "the World Players Association, Animal Aid's racing deaths tracker, and Grey2K."
+ ],
+ "direct": [
+  {
+   "name": "OHCHR — news",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.ohchr.org/en/rss/news"
+  },
+  {
+   "name": "UN News — Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
+  },
+  {
+   "name": "UN Special Procedures",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.ohchr.org/en/rss/special-procedures"
+  },
+  {
+   "name": "European Court of Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.echr.coe.int/rss"
+  },
+  {
+   "name": "European Commission",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://ec.europa.eu/commission/presscorner/api/rss"
+  },
+  {
+   "name": "US Department of Justice",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
+  },
+  {
+   "name": "Europol",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.europol.europa.eu/rss.xml"
+  },
+  {
+   "name": "OECD",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.oecd.org/newsroom/index.xml"
+  },
+  {
+   "name": "Council of Europe · anti-torture",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.coe.int/en/web/cpt/-/rss"
+  },
+  {
+   "name": "Transparency International",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.transparency.org/en/rss"
+  },
+  {
+   "name": "Business & Human Rights Resource Centre",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.business-humanrights.org/en/rss/"
+  },
+  {
+   "name": "Bellingcat",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.bellingcat.com/feed/"
+  },
+  {
+   "name": "Global Witness",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.globalwitness.org/en/rss/"
+  },
+  {
+   "name": "Freedom House",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://freedomhouse.org/rss.xml"
+  },
+  {
+   "name": "CIVICUS Monitor",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://monitor.civicus.org/feed/"
+  },
+  {
+   "name": "ODI",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://odi.org/en/feed/"
+  },
+  {
+   "name": "CEPR",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://cepr.org/rss.xml"
+  },
+  {
+   "name": "Tax Justice Network",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://taxjustice.net/feed/"
+  },
+  {
+   "name": "Human Rights Watch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.hrw.org/rss/news"
+  },
+  {
+   "name": "Amnesty International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.amnesty.org/en/rss/"
+  },
+  {
+   "name": "Front Line Defenders",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.frontlinedefenders.org/rss.xml"
+  },
+  {
+   "name": "World Organisation Against Torture (OMCT)",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.omct.org/en/rss"
+  },
+  {
+   "name": "Article 19",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.article19.org/feed/"
+  },
+  {
+   "name": "Statewatch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.statewatch.org/rss/"
+  },
+  {
+   "name": "Privacy International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://privacyinternational.org/rss.xml"
+  },
+  {
+   "name": "Public Citizen · Global Trade Watch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.citizen.org/feed/"
+  },
+  {
+   "name": "Corporate Europe Observatory",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://corporateeurope.org/en/rss.xml"
+  },
+  {
+   "name": "Harm Reduction International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://hri.global/feed/"
+  },
+  {
+   "name": "The Intercept",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://theintercept.com/feed/?rss"
+  },
+  {
+   "name": "The Marshall Project",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://www.themarshallproject.org/rss/recent.rss"
+  }
+ ],
+ "gnews": [
+  {
+   "label": "English (US) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (US) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (US) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (US) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (US) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (US) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (US) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "English (UK) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (UK) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (UK) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (UK) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (UK) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (UK) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (UK) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "English (India) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (India) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (India) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (India) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (India) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (India) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (India) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "English (Nigeria) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (Nigeria) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (Nigeria) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (Nigeria) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (Nigeria) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (Nigeria) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (Nigeria) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "English (Australia) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (Australia) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (Australia) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (Australia) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (Australia) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (Australia) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (Australia) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "English (South Africa) · sportswashing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "sportswashing",
+   "query": "sportswashing OR state-owned club human rights OR sponsorship reputation laundering sport"
+  },
+  {
+   "label": "English (South Africa) · betting",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "betting",
+   "query": "gambling sponsorship football OR betting advertising sport ban OR problem gambling sport"
+  },
+  {
+   "label": "English (South Africa) · matchfixing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "matchfixing",
+   "query": "match fixing investigation OR spot fixing charges OR corruption in refereeing"
+  },
+  {
+   "label": "English (South Africa) · governance",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "governance",
+   "query": "sports federation corruption OR FIFA governance inquiry OR IOC ethics case"
+  },
+  {
+   "label": "English (South Africa) · labour",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "labour",
+   "query": "stadium construction workers deaths OR migrant labour sport event OR athletes union dispute"
+  },
+  {
+   "label": "English (South Africa) · doping",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "doping",
+   "query": "doping ban athlete OR WADA case OR positive test suspension"
+  },
+  {
+   "label": "English (South Africa) · animals",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "animals",
+   "query": "greyhound racing ban OR horse racing deaths OR animal welfare racing inquiry"
+  },
+  {
+   "label": "Español (España) · sportswashing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "sportswashing",
+   "query": "lavado de imagen mediante el deporte OR \"sportswashing\" OR patrocinio derechos humanos deporte"
+  },
+  {
+   "label": "Español (España) · betting",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "betting",
+   "query": "patrocinio de casas de apuestas fútbol OR publicidad de apuestas deporte prohibición"
+  },
+  {
+   "label": "Español (España) · matchfixing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "matchfixing",
+   "query": "amaño de partidos investigación OR corrupción arbitral"
+  },
+  {
+   "label": "Español (España) · governance",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "governance",
+   "query": "corrupción en federación deportiva OR investigación gobernanza FIFA"
+  },
+  {
+   "label": "Español (España) · labour",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "labour",
+   "query": "muertes de obreros en estadios OR trabajadores migrantes evento deportivo"
+  },
+  {
+   "label": "Español (España) · doping",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "doping",
+   "query": "dopaje sanción atleta OR caso AMA OR positivo suspensión"
+  },
+  {
+   "label": "Español (España) · animals",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "animals",
+   "query": "prohibición de carreras de galgos OR muertes de caballos en carreras"
+  },
+  {
+   "label": "Español (México) · sportswashing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "sportswashing",
+   "query": "lavado de imagen mediante el deporte OR \"sportswashing\" OR patrocinio derechos humanos deporte"
+  },
+  {
+   "label": "Español (México) · betting",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "betting",
+   "query": "patrocinio de casas de apuestas fútbol OR publicidad de apuestas deporte prohibición"
+  },
+  {
+   "label": "Español (México) · matchfixing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "matchfixing",
+   "query": "amaño de partidos investigación OR corrupción arbitral"
+  },
+  {
+   "label": "Español (México) · governance",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "governance",
+   "query": "corrupción en federación deportiva OR investigación gobernanza FIFA"
+  },
+  {
+   "label": "Español (México) · labour",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "labour",
+   "query": "muertes de obreros en estadios OR trabajadores migrantes evento deportivo"
+  },
+  {
+   "label": "Español (México) · doping",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "doping",
+   "query": "dopaje sanción atleta OR caso AMA OR positivo suspensión"
+  },
+  {
+   "label": "Español (México) · animals",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "animals",
+   "query": "prohibición de carreras de galgos OR muertes de caballos en carreras"
+  },
+  {
+   "label": "Español (Argentina) · sportswashing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "sportswashing",
+   "query": "lavado de imagen mediante el deporte OR \"sportswashing\" OR patrocinio derechos humanos deporte"
+  },
+  {
+   "label": "Español (Argentina) · betting",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "betting",
+   "query": "patrocinio de casas de apuestas fútbol OR publicidad de apuestas deporte prohibición"
+  },
+  {
+   "label": "Español (Argentina) · matchfixing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "matchfixing",
+   "query": "amaño de partidos investigación OR corrupción arbitral"
+  },
+  {
+   "label": "Español (Argentina) · governance",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "governance",
+   "query": "corrupción en federación deportiva OR investigación gobernanza FIFA"
+  },
+  {
+   "label": "Español (Argentina) · labour",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "labour",
+   "query": "muertes de obreros en estadios OR trabajadores migrantes evento deportivo"
+  },
+  {
+   "label": "Español (Argentina) · doping",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "doping",
+   "query": "dopaje sanción atleta OR caso AMA OR positivo suspensión"
+  },
+  {
+   "label": "Español (Argentina) · animals",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "animals",
+   "query": "prohibición de carreras de galgos OR muertes de caballos en carreras"
+  },
+  {
+   "label": "Português (Brasil) · sportswashing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "sportswashing",
+   "query": "lavagem de imagem pelo desporto OR \"sportswashing\" OR patrocínio direitos humanos desporto"
+  },
+  {
+   "label": "Português (Brasil) · betting",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "betting",
+   "query": "patrocínio de casas de apostas futebol OR publicidade de apostas desporto proibição"
+  },
+  {
+   "label": "Português (Brasil) · matchfixing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "matchfixing",
+   "query": "manipulação de resultados investigação OR corrupção na arbitragem"
+  },
+  {
+   "label": "Português (Brasil) · governance",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "governance",
+   "query": "corrupção em federação desportiva OR investigação governança FIFA"
+  },
+  {
+   "label": "Português (Brasil) · labour",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "labour",
+   "query": "mortes de operários em estádios OR trabalhadores migrantes evento desportivo"
+  },
+  {
+   "label": "Português (Brasil) · doping",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "doping",
+   "query": "doping suspensão atleta OR caso AMA OR teste positivo"
+  },
+  {
+   "label": "Português (Brasil) · animals",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "animals",
+   "query": "proibição de corridas de galgos OR mortes de cavalos em corridas"
+  },
+  {
+   "label": "Português (Portugal) · sportswashing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "sportswashing",
+   "query": "lavagem de imagem pelo desporto OR \"sportswashing\" OR patrocínio direitos humanos desporto"
+  },
+  {
+   "label": "Português (Portugal) · betting",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "betting",
+   "query": "patrocínio de casas de apostas futebol OR publicidade de apostas desporto proibição"
+  },
+  {
+   "label": "Português (Portugal) · matchfixing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "matchfixing",
+   "query": "manipulação de resultados investigação OR corrupção na arbitragem"
+  },
+  {
+   "label": "Português (Portugal) · governance",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "governance",
+   "query": "corrupção em federação desportiva OR investigação governança FIFA"
+  },
+  {
+   "label": "Português (Portugal) · labour",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "labour",
+   "query": "mortes de operários em estádios OR trabalhadores migrantes evento desportivo"
+  },
+  {
+   "label": "Português (Portugal) · doping",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "doping",
+   "query": "doping suspensão atleta OR caso AMA OR teste positivo"
+  },
+  {
+   "label": "Português (Portugal) · animals",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "animals",
+   "query": "proibição de corridas de galgos OR mortes de cavalos em corridas"
+  },
+  {
+   "label": "Français · sportswashing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR blanchiment d'image par le sport OR droits humains sponsoring sportif"
+  },
+  {
+   "label": "Français · betting",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "betting",
+   "query": "sponsoring des paris sportifs OR publicité paris sport interdiction"
+  },
+  {
+   "label": "Français · matchfixing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "matchfixing",
+   "query": "matchs truqués enquête OR corruption arbitrage"
+  },
+  {
+   "label": "Français · governance",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "governance",
+   "query": "corruption fédération sportive OR enquête gouvernance FIFA"
+  },
+  {
+   "label": "Français · labour",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "labour",
+   "query": "morts d'ouvriers sur les stades OR travailleurs migrants événement sportif"
+  },
+  {
+   "label": "Français · doping",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "doping",
+   "query": "dopage suspension athlète OR affaire AMA OR contrôle positif"
+  },
+  {
+   "label": "Français · animals",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "animals",
+   "query": "interdiction des courses de lévriers OR morts de chevaux courses"
+  },
+  {
+   "label": "Français (Canada) · sportswashing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR blanchiment d'image par le sport OR droits humains sponsoring sportif"
+  },
+  {
+   "label": "Français (Canada) · betting",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "betting",
+   "query": "sponsoring des paris sportifs OR publicité paris sport interdiction"
+  },
+  {
+   "label": "Français (Canada) · matchfixing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "matchfixing",
+   "query": "matchs truqués enquête OR corruption arbitrage"
+  },
+  {
+   "label": "Français (Canada) · governance",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "governance",
+   "query": "corruption fédération sportive OR enquête gouvernance FIFA"
+  },
+  {
+   "label": "Français (Canada) · labour",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "labour",
+   "query": "morts d'ouvriers sur les stades OR travailleurs migrants événement sportif"
+  },
+  {
+   "label": "Français (Canada) · doping",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "doping",
+   "query": "dopage suspension athlète OR affaire AMA OR contrôle positif"
+  },
+  {
+   "label": "Français (Canada) · animals",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "animals",
+   "query": "interdiction des courses de lévriers OR morts de chevaux courses"
+  },
+  {
+   "label": "Deutsch · sportswashing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "sportswashing",
+   "query": "\"Sportswashing\" OR Imagepflege durch Sport OR Menschenrechte Sponsoring Sport"
+  },
+  {
+   "label": "Deutsch · betting",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "betting",
+   "query": "Wettsponsoring Fußball OR Wettwerbung Sport Verbot OR Spielsucht Sport"
+  },
+  {
+   "label": "Deutsch · matchfixing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "matchfixing",
+   "query": "Spielmanipulation Ermittlungen OR Schiedsrichterkorruption"
+  },
+  {
+   "label": "Deutsch · governance",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "governance",
+   "query": "Korruption Sportverband OR Untersuchung FIFA Führung"
+  },
+  {
+   "label": "Deutsch · labour",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "labour",
+   "query": "Todesfälle Bauarbeiter Stadion OR Wanderarbeiter Sportgroßereignis"
+  },
+  {
+   "label": "Deutsch · doping",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "doping",
+   "query": "Doping Sperre Athlet OR WADA Fall OR positiver Test"
+  },
+  {
+   "label": "Deutsch · animals",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "animals",
+   "query": "Verbot Windhundrennen OR Pferderennen Todesfälle Tierschutz"
+  },
+  {
+   "label": "Italiano · sportswashing",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR ripulitura d'immagine attraverso lo sport"
+  },
+  {
+   "label": "Italiano · betting",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "betting",
+   "query": "sponsorizzazioni scommesse calcio OR pubblicità scommesse sport divieto"
+  },
+  {
+   "label": "Italiano · matchfixing",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "matchfixing",
+   "query": "partite truccate indagine OR corruzione arbitrale"
+  },
+  {
+   "label": "Italiano · governance",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "governance",
+   "query": "corruzione federazione sportiva OR inchiesta governance FIFA"
+  },
+  {
+   "label": "Italiano · labour",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "labour",
+   "query": "morti operai stadi OR lavoratori migranti grande evento sportivo"
+  },
+  {
+   "label": "Italiano · doping",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "doping",
+   "query": "doping squalifica atleta OR caso WADA OR positivo al test"
+  },
+  {
+   "label": "Italiano · animals",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "animals",
+   "query": "divieto corse di levrieri OR morti di cavalli nelle corse"
+  },
+  {
+   "label": "Nederlands · sportswashing",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR imago witwassen via sport"
+  },
+  {
+   "label": "Nederlands · betting",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "betting",
+   "query": "goksponsoring voetbal OR gokreclame sport verbod"
+  },
+  {
+   "label": "Nederlands · animals",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "animals",
+   "query": "verbod windhondenrennen OR sterfte paarden races"
+  },
+  {
+   "label": "Polski · betting",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "betting",
+   "query": "sponsoring bukmacherów piłka nożna OR reklama zakładów sport zakaz"
+  },
+  {
+   "label": "Polski · matchfixing",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "matchfixing",
+   "query": "ustawianie meczów śledztwo OR korupcja sędziowska"
+  },
+  {
+   "label": "Русский · sportswashing",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "sportswashing",
+   "query": "спортивный отбеливание репутации OR спортвошинг OR права человека спонсорство спорт"
+  },
+  {
+   "label": "Русский · betting",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "betting",
+   "query": "спонсорство букмекеров футбол OR реклама ставок спорт запрет"
+  },
+  {
+   "label": "Русский · matchfixing",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "matchfixing",
+   "query": "договорные матчи расследование OR коррупция судейство"
+  },
+  {
+   "label": "Русский · governance",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "governance",
+   "query": "коррупция в спортивной федерации OR расследование ФИФА"
+  },
+  {
+   "label": "Русский · labour",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "labour",
+   "query": "гибель рабочих на стадионах OR трудовые мигранты спортивное мероприятие"
+  },
+  {
+   "label": "Русский · doping",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "doping",
+   "query": "допинг дисквалификация спортсмен OR дело ВАДА"
+  },
+  {
+   "label": "Русский · animals",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "animals",
+   "query": "запрет собачьих бегов OR гибель лошадей на скачках"
+  },
+  {
+   "label": "Türkçe · sportswashing",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "sportswashing",
+   "query": "spor yıkama OR \"sportswashing\" OR insan hakları sponsorluk spor"
+  },
+  {
+   "label": "Türkçe · betting",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "betting",
+   "query": "bahis sponsorluğu futbol OR bahis reklamı spor yasak"
+  },
+  {
+   "label": "Türkçe · matchfixing",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "matchfixing",
+   "query": "şike soruşturması OR hakem yolsuzluğu"
+  },
+  {
+   "label": "Türkçe · governance",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "governance",
+   "query": "spor federasyonunda yolsuzluk OR FIFA soruşturma"
+  },
+  {
+   "label": "Türkçe · labour",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "labour",
+   "query": "stadyum işçi ölümleri OR göçmen işçiler spor etkinliği"
+  },
+  {
+   "label": "Türkçe · doping",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "doping",
+   "query": "doping cezası sporcu OR WADA vakası"
+  },
+  {
+   "label": "Bahasa Indonesia · sportswashing",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR pencucian citra lewat olahraga"
+  },
+  {
+   "label": "Bahasa Indonesia · betting",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "betting",
+   "query": "sponsor judi sepak bola OR iklan taruhan olahraga larangan"
+  },
+  {
+   "label": "Bahasa Indonesia · matchfixing",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "matchfixing",
+   "query": "pengaturan skor penyelidikan OR korupsi wasit"
+  },
+  {
+   "label": "Bahasa Indonesia · governance",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "governance",
+   "query": "korupsi federasi olahraga OR penyelidikan tata kelola FIFA"
+  },
+  {
+   "label": "Bahasa Indonesia · labour",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "labour",
+   "query": "kematian pekerja stadion OR pekerja migran ajang olahraga"
+  },
+  {
+   "label": "Bahasa Indonesia · doping",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "doping",
+   "query": "doping sanksi atlet OR kasus WADA"
+  },
+  {
+   "label": "Tiếng Việt · betting",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "betting",
+   "query": "tài trợ cá cược bóng đá OR quảng cáo cá cược thể thao"
+  },
+  {
+   "label": "Tiếng Việt · matchfixing",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "matchfixing",
+   "query": "dàn xếp tỷ số điều tra OR tiêu cực trọng tài"
+  },
+  {
+   "label": "ไทย · betting",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "betting",
+   "query": "สปอนเซอร์พนัน ฟุตบอล OR โฆษณาพนัน กีฬา"
+  },
+  {
+   "label": "ไทย · matchfixing",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "matchfixing",
+   "query": "ล้มบอล สอบสวน OR ทุจริตกรรมการ"
+  },
+  {
+   "label": "日本語 · sportswashing",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "sportswashing",
+   "query": "スポーツウォッシング OR スポーツによるイメージ改善 人権"
+  },
+  {
+   "label": "日本語 · betting",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "betting",
+   "query": "賭博スポンサー サッカー OR ギャンブル広告 スポーツ 規制"
+  },
+  {
+   "label": "日本語 · matchfixing",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "matchfixing",
+   "query": "八百長 捜査 OR 審判 買収"
+  },
+  {
+   "label": "日本語 · governance",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "governance",
+   "query": "スポーツ団体 汚職 OR FIFA 統治 調査"
+  },
+  {
+   "label": "日本語 · doping",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "doping",
+   "query": "ドーピング 処分 OR 世界反ドーピング機関 事案"
+  },
+  {
+   "label": "日本語 · animals",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "animals",
+   "query": "競走馬 死亡 OR ドッグレース 禁止 動物福祉"
+  },
+  {
+   "label": "한국어 · sportswashing",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "sportswashing",
+   "query": "스포츠워싱 OR 스포츠를 통한 이미지 세탁"
+  },
+  {
+   "label": "한국어 · betting",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "betting",
+   "query": "베팅 후원 축구 OR 도박 광고 스포츠 규제"
+  },
+  {
+   "label": "한국어 · matchfixing",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "matchfixing",
+   "query": "승부조작 수사 OR 심판 매수"
+  },
+  {
+   "label": "한국어 · governance",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "governance",
+   "query": "체육 단체 비리 OR FIFA 지배구조 조사"
+  },
+  {
+   "label": "한국어 · doping",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "doping",
+   "query": "도핑 징계 OR 세계반도핑기구 사건"
+  },
+  {
+   "label": "中文 (台灣) · sportswashing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "sportswashing",
+   "query": "體育洗白 OR 透過體育 洗白形象 人權"
+  },
+  {
+   "label": "中文 (台灣) · betting",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "betting",
+   "query": "博彩贊助 足球 OR 博彩廣告 體育 禁令"
+  },
+  {
+   "label": "中文 (台灣) · matchfixing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "matchfixing",
+   "query": "假球 調查 OR 裁判 賄賂"
+  },
+  {
+   "label": "中文 (台灣) · governance",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "governance",
+   "query": "體育協會 腐敗 OR 國際足聯 治理 調查"
+  },
+  {
+   "label": "中文 (台灣) · doping",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "doping",
+   "query": "興奮劑 禁賽 OR 世界反興奮劑機構 案件"
+  },
+  {
+   "label": "中文 (台灣) · animals",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "animals",
+   "query": "賽馬 死亡 OR 賽狗 禁令 動物福利"
+  },
+  {
+   "label": "中文 (香港) · sportswashing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "sportswashing",
+   "query": "體育洗白 OR 通過體育 洗白形象 人權"
+  },
+  {
+   "label": "中文 (香港) · betting",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "betting",
+   "query": "博彩贊助 足球 OR 博彩廣告 體育 禁令"
+  },
+  {
+   "label": "中文 (香港) · matchfixing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "matchfixing",
+   "query": "假球 調查 OR 裁判 賄賂"
+  },
+  {
+   "label": "中文 (香港) · governance",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "governance",
+   "query": "體育協會 腐敗 OR 國際足聯 治理 調查"
+  },
+  {
+   "label": "中文 (香港) · doping",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "doping",
+   "query": "興奮劑 禁賽 OR 世界反興奮劑機構 案件"
+  },
+  {
+   "label": "中文 (香港) · animals",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "animals",
+   "query": "賽馬 死亡 OR 賽狗 禁令 動物福利"
+  },
+  {
+   "label": "हिन्दी · labour",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "labour",
+   "query": "स्टेडियम निर्माण मजदूर मौत OR प्रवासी श्रमिक खेल आयोजन"
+  },
+  {
+   "label": "العربية (مصر) · sportswashing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "sportswashing",
+   "query": "الغسيل الرياضي OR تلميع الصورة عبر الرياضة OR حقوق الإنسان رعاية رياضية"
+  },
+  {
+   "label": "العربية (مصر) · matchfixing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "matchfixing",
+   "query": "التلاعب بالمباريات تحقيق OR فساد التحكيم"
+  },
+  {
+   "label": "العربية (مصر) · governance",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "governance",
+   "query": "فساد اتحاد رياضي OR تحقيق في حوكمة الفيفا"
+  },
+  {
+   "label": "العربية (مصر) · labour",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "labour",
+   "query": "وفيات عمال ملاعب OR عمال مهاجرون حدث رياضي"
+  },
+  {
+   "label": "العربية (الإمارات) · sportswashing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "sportswashing",
+   "query": "الغسيل الرياضي OR تلميع الصورة عبر الرياضة OR حقوق الإنسان رعاية رياضية"
+  },
+  {
+   "label": "العربية (الإمارات) · matchfixing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "matchfixing",
+   "query": "التلاعب بالمباريات تحقيق OR فساد التحكيم"
+  },
+  {
+   "label": "العربية (الإمارات) · governance",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "governance",
+   "query": "فساد اتحاد رياضي OR تحقيق في حوكمة الفيفا"
+  },
+  {
+   "label": "العربية (الإمارات) · labour",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "labour",
+   "query": "وفيات عمال ملاعب OR عمال مهاجرون حدث رياضي"
+  },
+  {
+   "label": "Ελληνικά · sportswashing",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR ξέπλυμα εικόνας μέσω αθλητισμού"
+  },
+  {
+   "label": "Ελληνικά · betting",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "betting",
+   "query": "χορηγίες στοιχηματικών ποδόσφαιρο OR διαφήμιση στοιχήματος αθλητισμός"
+  },
+  {
+   "label": "Ελληνικά · matchfixing",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "matchfixing",
+   "query": "στημένοι αγώνες έρευνα OR διαφθορά διαιτησίας"
+  },
+  {
+   "label": "Ελληνικά · governance",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "governance",
+   "query": "διαφθορά αθλητικής ομοσπονδίας"
+  },
+  {
+   "label": "Ελληνικά · doping",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "doping",
+   "query": "ντόπινγκ τιμωρία αθλητή"
+  },
+  {
+   "label": "Ελληνικά · animals",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "animals",
+   "query": "απαγόρευση κυνοδρομιών OR θάνατοι αλόγων ιπποδρομίες"
+  },
+  {
+   "label": "Svenska · sportswashing",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "sportswashing",
+   "query": "\"sportswashing\" OR imagetvätt genom idrott"
+  },
+  {
+   "label": "Svenska · betting",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "betting",
+   "query": "spelsponsring fotboll OR spelreklam idrott förbud"
+  },
+  {
+   "label": "English (US) · athletes",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "athletes",
+   "query": "athletes union dispute pay OR equal prize money claim OR collective bargaining players league"
+  },
+  {
+   "label": "Español · athletes",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "athletes",
+   "query": "conflicto sindical de deportistas OR igualdad de premios reclamación OR convenio colectivo jugadores"
+  },
+  {
+   "label": "Português (BR) · athletes",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "athletes",
+   "query": "conflito sindical de atletas OR igualdade de prémios reclamação OR convenção coletiva jogadores"
+  },
+  {
+   "label": "Français · athletes",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "athletes",
+   "query": "conflit syndical des sportifs OR égalité des primes revendication OR convention collective joueurs"
+  },
+  {
+   "label": "Deutsch · athletes",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "athletes",
+   "query": "Tarifstreit Sportler OR gleiche Preisgelder Forderung OR Kollektivvertrag Spieler"
+  },
+  {
+   "label": "Italiano · athletes",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "athletes",
+   "query": "vertenza sindacale degli atleti OR parità dei premi rivendicazione"
+  },
+  {
+   "label": "Русский · athletes",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "athletes",
+   "query": "профсоюзный спор спортсменов OR равные призовые требование"
+  },
+  {
+   "label": "日本語 · athletes",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "athletes",
+   "query": "選手会 交渉 待遇 OR 賞金 格差 是正"
+  },
+  {
+   "label": "한국어 · athletes",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "athletes",
+   "query": "선수 노조 교섭 처우 OR 상금 격차 시정"
+  },
+  {
+   "label": "中文 · athletes",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "athletes",
+   "query": "球員工會 談判 待遇 OR 獎金 平等 訴求"
+  },
+  {
+   "label": "English (US) · broadcast",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "broadcast",
+   "query": "sports broadcasting rights cost OR paywalled matches backlash OR streaming exclusivity sport"
+  },
+  {
+   "label": "Español · broadcast",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "broadcast",
+   "query": "coste de los derechos de retransmisión deportiva OR partidos de pago críticas"
+  },
+  {
+   "label": "Português (BR) · broadcast",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "broadcast",
+   "query": "custo dos direitos de transmissão desportiva OR jogos pagos críticas"
+  },
+  {
+   "label": "Français · broadcast",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "broadcast",
+   "query": "coût des droits de diffusion sportive OR matchs payants critiques"
+  },
+  {
+   "label": "Deutsch · broadcast",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "broadcast",
+   "query": "Kosten der Sportübertragungsrechte OR Spiele hinter Bezahlschranke Kritik"
+  },
+  {
+   "label": "Italiano · broadcast",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "broadcast",
+   "query": "costo dei diritti televisivi sportivi OR partite a pagamento critiche"
+  },
+  {
+   "label": "日本語 · broadcast",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "broadcast",
+   "query": "スポーツ 放映権 高騰 OR 有料配信 批判"
+  },
+  {
+   "label": "한국어 · broadcast",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "broadcast",
+   "query": "스포츠 중계권 비용 OR 유료 중계 비판"
+  },
+  {
+   "label": "中文 · broadcast",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "broadcast",
+   "query": "體育 轉播權 成本 OR 付費觀賽 批評"
+  },
+  {
+   "label": "English (US) · regulation",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "regulation",
+   "query": "sports governance reform law OR independent regulator football OR fan ownership rules"
+  },
+  {
+   "label": "Español · regulation",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "regulation",
+   "query": "ley de reforma de la gobernanza deportiva OR regulador independiente del fútbol"
+  },
+  {
+   "label": "Português (BR) · regulation",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "regulation",
+   "query": "lei de reforma da governação desportiva OR regulador independente do futebol"
+  },
+  {
+   "label": "Français · regulation",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "regulation",
+   "query": "loi de réforme de la gouvernance du sport OR régulateur indépendant du football"
+  },
+  {
+   "label": "Deutsch · regulation",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "regulation",
+   "query": "Gesetz zur Reform der Sportverwaltung OR unabhängiger Regulierer Fußball"
+  },
+  {
+   "label": "Italiano · regulation",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "regulation",
+   "query": "legge di riforma della governance sportiva OR autorità indipendente calcio"
+  },
+  {
+   "label": "日本語 · regulation",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "regulation",
+   "query": "スポーツ 統治 改革 法案 OR 独立規制機関 サッカー"
+  },
+  {
+   "label": "한국어 · regulation",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "regulation",
+   "query": "스포츠 거버넌스 개혁 법 OR 독립 규제기구 축구"
+  }
+ ],
+ "events": [
+  {
+   "label": "Match-fixing and integrity units",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "match-fixing prosecution OR sports integrity unit report OR betting alerts figures"
+  },
+  {
+   "label": "Gambling regulation in sport",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "gambling commission sport OR betting advertising rules OR licence action operator"
+  },
+  {
+   "label": "Governing body governance",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "federation suspended OR ethics committee ruling OR governance audit sport"
+  },
+  {
+   "label": "Anti-doping decisions",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "WADA compliance OR doping sanction OR CAS award doping"
+  },
+  {
+   "label": "Court rulings in sport",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"Court of Arbitration for Sport\" ruling OR sports law judgment OR transfer system ruling"
+  },
+  {
+   "label": "Mega-event costs and labour",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "Olympic cost overrun study OR World Cup migrant labour report OR event displacement"
+  },
+  {
+   "label": "Sports integrity research",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "match-fixing prevalence study OR sports corruption research OR betting integrity data"
+  },
+  {
+   "label": "Concussion and health research",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "concussion study players OR CTE research OR dementia footballers findings"
+  },
+  {
+   "label": "Ownership and finance",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "club ownership analysis OR private equity sport investment OR multi-club rules"
+  },
+  {
+   "label": "Athlete organising",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "players union recognition OR athlete collective action OR equal pay campaign"
+  },
+  {
+   "label": "Safeguarding campaigns",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "athlete abuse inquiry OR safeguarding reform sport OR survivors sport"
+  },
+  {
+   "label": "Fan and ticketing campaigns",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "ticket price protest OR safe standing OR supporters trust ownership"
+  },
+  {
+   "label": "Animal racing welfare",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "horse racing deaths campaign OR greyhound ban OR rodeo welfare protest"
+  },
+  {
+   "label": "Sport and climate",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "sport emissions report OR climate risk fixtures OR winter games snow viability"
+  },
+  {
+   "label": "Broadcast and access",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "listed events review OR broadcast rights ruling OR piracy blocking sport"
+  },
+  {
+   "label": "Eligibility and classification",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "eligibility policy federation OR classification review para sport ruling"
+  }
+ ]
 }

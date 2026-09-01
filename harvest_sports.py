@@ -41,13 +41,27 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
+# The shared gazetteer. Placement used to be each wire's own short country
+# table, which put most of every wire in a counter marked "unplaced"; this is
+# the fleet's common one, and it is optional at import so a harvest still runs
+# if the data file has not been fetched yet.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import galaxy_places
+    _GAZETTEER = True
+except Exception as _exc:                       # noqa: BLE001
+    print("  ! gazetteer unavailable (%s); falling back to the local table"
+          % _exc, file=sys.stderr)
+    galaxy_places = None
+    _GAZETTEER = False
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCES_PATH = os.path.join(HERE, "sources_sports.json")
 OUT_PATH = os.path.join(HERE, "wire_sports.json")
 
 RETAIN_DAYS = 45
 MAX_ITEMS = 1200
-WORKERS = 10         # a few hundred wires now
+WORKERS = 14         # 26 languages, each asked in its own
 NOTABLE_SCORE = 3       # at or above this a story is marked as consequential
 
 # --------------------------------------------------------------------------
@@ -71,9 +85,24 @@ def build_gnews_url(loc):
     return ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q) +
             "&hl=" + loc["hl"] + "&gl=" + loc["gl"] + "&ceid=" + loc["ceid"])
 
+READ_BUDGET_MIN = 35          # minutes spent reading wires
+
+# The wall-clock budget for reading wires. Past it the remaining sources are
+# recorded unreachable and the harvest finishes on what it has, because the
+# wire is only written at the end of run() and a job killed by the workflow
+# timeout commits nothing at all — which is how a feed gets stuck stale.
+DEADLINE = None
+
+
+def out_of_time():
+    return DEADLINE is not None and time.monotonic() > DEADLINE
+
+
 def fetch(url, tries=3):
     last = None
     for attempt in range(tries):
+        if out_of_time():
+            return None
         try:
             req = urllib.request.Request(url, headers={
                 "User-Agent": USER_AGENT,
@@ -86,6 +115,16 @@ def fetch(url, tries=3):
                 if resp.headers.get("Content-Encoding") == "gzip":
                     raw = gzip.GzipFile(fileobj=io.BytesIO(raw)).read()
                 return raw
+        except urllib.error.HTTPError as exc:
+            last = exc
+            # Being rate-limited or refused is an answer, not a hiccup. Trying
+            # the same query twice more against the same limiter spends eighty
+            # seconds of a worker slot to be told the same thing, and deepens
+            # the throttle for every other query in the run.
+            if exc.code in (403, 429, 451):
+                time.sleep(1.5)
+                break
+            time.sleep(1.5 * (attempt + 1))
         except Exception as exc:                       # noqa: BLE001 — report, don't crash the run
             last = exc
             time.sleep(1.5 * (attempt + 1))
@@ -792,6 +831,192 @@ DECIDED_C = _compile_all(DECIDED)
 INSTITUTIONAL_C = _compile_all(INSTITUTIONAL)
 MEASURED_C = _compile_all(MEASURED)
 PENDING_C = _compile_all(PENDING)
+# ------------------------------------------------------------------
+# The subjects, in the languages the queries now ask in.
+#
+# Built alongside the queries rather than after them: localised
+# queries against English-only subjects fetch stories the subject
+# gate then refuses, which reads as an improvement in the source
+# count and a worsening in everything else.
+# ------------------------------------------------------------------
+LOCAL_TERMS = {
+    "animals": [
+        ("divieto corse di", None), ("interdiction des courses", None),
+        ("mortes de cavalos", None), ("morti di cavalli", None),
+        ("morts de chevaux", None), ("muertes de caballos", None),
+        ("pferderennen todesfälle tierschutz", None), ("prohibición de carreras", None),
+        ("proibição de corridas", None), ("sterfte paarden races", None),
+        ("verbod windhondenrennen", None), ("verbot windhundrennen", None),
+        ("απαγόρευση κυνοδρομιών", None), ("θάνατοι αλόγων ιπποδρομίες", None),
+        ("гибель лошадей на", None), ("запрет собачьих бегов", None),
+        ("ドッグレース 禁止 動物福祉", None), ("競走馬 死亡", None),
+        ("赛狗 禁令 动物福利", None), ("赛马 死亡", None),
+    ],
+    "betting": [
+        ("bahis reklamı spor", None), ("bahis sponsorluğu futbol", None),
+        ("gokreclame sport verbod", None), ("goksponsoring voetbal", None),
+        ("iklan taruhan olahraga", None), ("patrocinio de casas", None),
+        ("patrocínio de casas", None), ("pubblicità scommesse sport", None),
+        ("publicidad de apuestas", None), ("publicidade de apostas", None),
+        ("publicité paris sport", None), ("quảng cáo cá", None),
+        ("reklama zakładów sport", None), ("spelreklam idrott förbud", None),
+        ("spelsponsring fotboll", None), ("spielsucht sport", None),
+        ("sponsor judi sepak", None), ("sponsoring bukmacherów piłka", None),
+        ("sponsoring des paris", None), ("sponsorizzazioni scommesse calcio", None),
+        ("tài trợ cá", None), ("wettsponsoring fußball", None),
+        ("wettwerbung sport verbot", None), ("διαφήμιση στοιχήματος αθλητισμός", None),
+        ("χορηγίες στοιχηματικών ποδόσφαιρο", None), ("реклама ставок спорт", None),
+        ("спонсорство букмекеров футбол", None), ("สปอนเซอร์พนัน ฟุตบอล", None),
+        ("โฆษณาพนัน กีฬา", None), ("ギャンブル広告 スポーツ 規制", None),
+        ("博彩广告 体育 禁令", None), ("博彩赞助 足球", None),
+        ("賭博スポンサー サッカー", None), ("도박 광고 스포츠", None),
+        ("베팅 후원 축구", None),
+    ],
+    "doping": [
+        ("affaire ama", None), ("caso ama", None),
+        ("caso wada", None), ("contrôle positif", None),
+        ("dopage suspension athlète", None), ("dopaje sanción atleta", None),
+        ("doping cezası sporcu", None), ("doping sanksi atlet", None),
+        ("doping sperre athlet", None), ("doping squalifica atleta", None),
+        ("doping suspensão atleta", None), ("kasus wada", None),
+        ("positiver test", None), ("positivo al test", None),
+        ("positivo suspensión", None), ("teste positivo", None),
+        ("wada fall", None), ("wada vakası", None),
+        ("ντόπινγκ τιμωρία αθλητή", None), ("дело вада", None),
+        ("допинг дисквалификация спортсмен", None), ("ドーピング 処分", None),
+        ("世界反ドーピング機関 事案", None), ("世界反兴奋剂机构 案件", None),
+        ("兴奋剂 禁赛", None), ("도핑 징계", None),
+        ("세계반도핑기구 사건", None),
+    ],
+    "governance": [
+        ("corrupción en federación", None), ("corruption fédération sportive", None),
+        ("corrupção em federação", None), ("corruzione federazione sportiva", None),
+        ("enquête gouvernance fifa", None), ("fifa soruşturma", None),
+        ("fifa 統治 調査", None), ("fifa 지배구조 조사", None),
+        ("inchiesta governance fifa", None), ("investigación gobernanza fifa", None),
+        ("investigação governança fifa", None), ("korruption sportverband", None),
+        ("korupsi federasi olahraga", None), ("penyelidikan tata kelola", None),
+        ("spor federasyonunda yolsuzluk", None), ("untersuchung fifa führung", None),
+        ("διαφθορά αθλητικής ομοσπονδίας", None), ("коррупция в спортивной", None),
+        ("расследование фифа", None), ("تحقيق في حوكمة", None),
+        ("فساد اتحاد رياضي", None), ("スポーツ団体 汚職", None),
+        ("体育协会 腐败", None), ("国际足联 治理 调查", None),
+        ("체육 단체 비리", None),
+    ],
+    "labour": [
+        ("göçmen işçiler spor", None), ("kematian pekerja stadion", None),
+        ("lavoratori migranti grande", None), ("mortes de operários", None),
+        ("morti operai stadi", None), ("morts d'ouvriers sur", None),
+        ("muertes de obreros", None), ("pekerja migran ajang", None),
+        ("stadyum işçi ölümleri", None), ("todesfälle bauarbeiter stadion", None),
+        ("trabajadores migrantes evento", None), ("trabalhadores migrantes evento", None),
+        ("travailleurs migrants événement", None), ("wanderarbeiter sportgroßereignis", None),
+        ("гибель рабочих на", None), ("трудовые мигранты спортивное", None),
+        ("عمال مهاجرون حدث", None), ("وفيات عمال ملاعب", None),
+        ("प्रवासी श्रमिक खेल", None), ("स्टेडियम निर्माण मजदूर", None),
+    ],
+    "matchfixing": [
+        ("amaño de partidos", None), ("corrupción arbitral", None),
+        ("corruption arbitrage", None), ("corrupção na arbitragem", None),
+        ("corruzione arbitrale", None), ("dàn xếp tỷ", None),
+        ("hakem yolsuzluğu", None), ("korupcja sędziowska", None),
+        ("korupsi wasit", None), ("manipulação de resultados", None),
+        ("matchs truqués enquête", None), ("partite truccate indagine", None),
+        ("pengaturan skor penyelidikan", None), ("schiedsrichterkorruption", None),
+        ("spielmanipulation ermittlungen", None), ("tiêu cực trọng", None),
+        ("ustawianie meczów śledztwo", None), ("şike soruşturması", None),
+        ("διαφθορά διαιτησίας", None), ("στημένοι αγώνες έρευνα", None),
+        ("договорные матчи расследование", None), ("коррупция судейство", None),
+        ("التلاعب بالمباريات تحقيق", None), ("فساد التحكيم", None),
+        ("ทุจริตกรรมการ", None), ("ล้มบอล สอบสวน", None),
+        ("假球 调查", None), ("八百長 捜査", None),
+        ("審判 買収", None), ("裁判 贿赂", None),
+        ("승부조작 수사", None), ("심판 매수", None),
+    ],
+    "sportswashing": [
+        ("blanchiment d'image par", None), ("droits humains sponsoring", None),
+        ("imagepflege durch sport", None), ("imagetvätt genom idrott", None),
+        ("imago witwassen via", None), ("insan hakları sponsorluk", None),
+        ("lavado de imagen", None), ("lavagem de imagem", None),
+        ("menschenrechte sponsoring sport", None), ("patrocinio derechos humanos", None),
+        ("patrocínio direitos humanos", None), ("pencucian citra lewat", None),
+        ("ripulitura d'immagine attraverso", None), ("spor yıkama", None),
+        ("sportswashing", None), ("ξέπλυμα εικόνας μέσω", None),
+        ("права человека спонсорство", None), ("спортвошинг", None),
+        ("спортивный отбеливание репутации", None), ("الغسيل الرياضي", None),
+        ("تلميع الصورة عبر", None), ("حقوق الإنسان رعاية", None),
+        ("スポーツによるイメージ改善 人権", None), ("スポーツウォッシング", None),
+        ("体育洗白", None), ("通过体育 洗白形象 人权", None),
+        ("스포츠를 통한 이미지", None), ("스포츠워싱", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(LOCAL_TERMS.get(_tid, []))
+
+# ------------------------------------------------------------------
+# Subjects this wire had a name for and never asked about.
+#
+# The terms below were already here and were well written; what was
+# missing was any query aimed at them, so they held zero stories
+# however much the world published. These are the phrases from the
+# queries now added, so what is fetched can be filed.
+# ------------------------------------------------------------------
+FILL_TERMS = {
+    "athletes": [
+        ("conflicto sindical de", None), ("conflit syndical des", None),
+        ("conflito sindical de", None), ("convenio colectivo jugadores", None),
+        ("convention collective joueurs", None), ("convenção coletiva jogadores", None),
+        ("gleiche preisgelder forderung", None), ("igualdad de premios", None),
+        ("igualdade de prémios", None), ("kollektivvertrag spieler", None),
+        ("parità dei premi", None), ("tarifstreit sportler", None),
+        ("vertenza sindacale degli", None), ("égalité des primes", None),
+        ("профсоюзный спор спортсменов", None), ("равные призовые требование", None),
+        ("奖金 平等 诉求", None), ("球员工会 谈判 待遇", None),
+        ("賞金 格差 是正", None), ("選手会 交渉 待遇", None),
+        ("상금 격차 시정", None), ("선수 노조 교섭", None),
+    ],
+    "broadcast": [
+        ("coste de los", None), ("costo dei diritti", None),
+        ("coût des droits", None), ("custo dos direitos", None),
+        ("jogos pagos críticas", None), ("kosten der sportübertragungsrechte", None),
+        ("matchs payants critiques", None), ("partidos de pago", None),
+        ("partite a pagamento", None), ("spiele hinter bezahlschranke", None),
+        ("スポーツ 放映権 高騰", None), ("付费观赛 批评", None),
+        ("体育 转播权 成本", None), ("有料配信 批判", None),
+        ("스포츠 중계권 비용", None), ("유료 중계 비판", None),
+    ],
+    "regulation": [
+        ("autorità indipendente calcio", None), ("gesetz zur reform", None),
+        ("legge di riforma", None), ("lei de reforma", None),
+        ("ley de reforma", None), ("loi de réforme", None),
+        ("regulador independente do", None), ("regulador independiente del", None),
+        ("régulateur indépendant du", None), ("unabhängiger regulierer fußball", None),
+        ("スポーツ 統治 改革", None), ("独立規制機関 サッカー", None),
+        ("독립 규제기구 축구", None), ("스포츠 거버넌스 개혁", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(FILL_TERMS.get(_tid, []))
+
+
+# --------------------------------------------------------------------------
+# The same subjects in the languages this wire's own queries ask in, derived
+# from those queries and filed under the subject each query's label names. The
+# gate above was written in English; the queries were translated and it was
+# not, so three quarters of what the wire fetched could not be recognised once
+# it arrived. Generated — edit topics_multilingual.json, or delete the file to
+# turn this off.
+# --------------------------------------------------------------------------
+_EXTRA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "topics_multilingual.json")
+if os.path.exists(_EXTRA_PATH):
+    with open(_EXTRA_PATH, encoding="utf-8") as _fh:
+        _EXTRA = json.load(_fh)
+    TOPICS = [(tid, label, terms + [(t, g) for t, g in _EXTRA.get(tid, [])])
+              for tid, label, terms in TOPICS]
+
 TOPICS_C = [(tid, label, [(_compile(t), _compile_all(g) if g else None) for t, g in terms])
             for tid, label, terms in TOPICS]
 GEO3_C = [(rid, rlabel, [(sid, slabel, [(pid, plabel, _compile_all(terms))
@@ -1847,19 +2072,91 @@ def scene_first(text, places):
         (scene if _is_scene(text, _first_pos(text, terms.get(pid, []))) else rest).append(pid)
     return scene + rest
 
-def point_for(text, places, subs, regions):
-    """The most specific point a story resolved to: a named sub-national place
-    if there is one, otherwise the country, otherwise the subregion or region.
-    Returns (label_or_None, point_or_None)."""
+
+# --------------------------------------------------------------------------
+# The gazetteer answers with a country; this wire's taxonomy is keyed on ids
+# whose leading token is that country's ISO-2. Filing a placed story under its
+# region is therefore a lookup, not a guess. Where a country is split across
+# several places, only region and subregion are filled: which of the places a
+# story belongs to is a question the country code cannot answer.
+# --------------------------------------------------------------------------
+ISO_REGION = {}
+for _rid, _rlabel, _subs in GEO3:
+    for _sid, _slabel, _places in _subs:
+        for _pid, _plabel, _terms in _places:
+            _iso = _pid.split("-")[0].lower()
+            if len(_iso) == 2:
+                ISO_REGION.setdefault(_iso, (_rid, _sid))
+
+
+def file_by_country(row, cc):
+    """Put a gazetteer-placed story in its region, if the wire has one."""
+    if not cc:
+        return
+    hit = ISO_REGION.get(str(cc).lower())
+    if not hit:
+        return
+    rid, sid = hit
+    if not row.get("w") or row["w"] == ["unlocated"]:
+        row["w"] = [rid]
+    if not row.get("sr") or row["sr"] == ["unlocated"]:
+        row["sr"] = [sid]
+
+
+
+def country_for(raw, locale=None):
+    """The ISO-2 the placement resolved to, or None."""
+    if not _GAZETTEER:
+        return None
+    try:
+        return galaxy_places.resolve_full(raw, locale)[4]
+    except Exception:
+        return None
+
+
+def point_for(text, places, subs, regions, locale=None, raw=None):
+    """The most specific point a story resolved to.
+
+    The order is deliberate. This wire's own curated table goes first: it holds
+    the places this subject actually turns up and the country list it was
+    written against, and it beats a general gazetteer on its own ground. The
+    shared gazetteer follows but only overrides at the settlement level, so a
+    headline naming Kharkiv pins on Kharkiv rather than the middle of Ukraine,
+    while a country reading from this wire's own table still wins over a
+    country reading from the gazetteer. Then the bodies that stand for a
+    jurisdiction without naming it — EFSA is a European story, ANVISA a
+    Brazilian one. Last, and weakest, the country the source itself reports
+    from.
+
+    Returns (label_or_None, point_or_None, approx). approx is True only for
+    that last case, where nothing in the story placed it and the point is the
+    reporting locale rather than the scene. The page draws those hollow.
+    """
     label, point = precise_for(text)
     if point:
-        return label, point
+        return label, point, False
+
+    glabel, gpoint, grank = None, None, -1
+    if _GAZETTEER:
+        glabel, gpoint, grank, _approx = galaxy_places.resolve_ranked(raw or text)
+        if grank == 3:
+            return glabel, gpoint, False
+
     places = scene_first(text, places)
     for level in (places, subs, regions):
         for pid in level:
             if pid in COORDS:
-                return None, COORDS[pid]
-    return None, None
+                return None, COORDS[pid], False
+
+    if gpoint:
+        return glabel, gpoint, False
+
+    if _GAZETTEER and locale:
+        llabel, lpoint, _lrank, lapprox = galaxy_places.resolve_ranked("", locale)
+        if lpoint:
+            return llabel, lpoint, lapprox
+
+    return None, None, False
 
 
 def load_sources():
@@ -1873,13 +2170,16 @@ def load_sources():
         for loc in cfg.get(block, []):
             srcs.append({"name": prefix + loc["label"], "lang": loc["lang"],
                          "standing": loc["standing"], "region": loc["standing"],
-                         "kind": "news", "url": build_gnews_url(loc),
+                         "kind": "news", "url": build_gnews_url(loc), "gl": loc.get("gl"),
                          "query": loc.get("query", "")})
     return srcs, cfg
 
 
 def run(dry_run=False, fixtures=None):
+    global DEADLINE
     sources, cfg = load_sources()
+    if not fixtures:
+        DEADLINE = time.monotonic() + READ_BUDGET_MIN * 60
     print("Reading %d wires…" % len(sources))
 
     def read(src):
@@ -1939,7 +2239,12 @@ def run(dry_run=False, fixtures=None):
                 row["w"] = regions
                 row["sr"] = subs
                 row["pl"] = places
-                row["pn"], row["ll"] = point_for(text, places, subs, regions)
+                row["gl"] = src.get("gl")
+                _raw = (row["t"] or "") + " " + (row.get("s") or "")
+                row["pn"], row["ll"], row["pa"] = point_for(
+                    text, places, subs, regions, src.get("gl"), _raw)
+                if row["ll"]:
+                    file_by_country(row, country_for(_raw, src.get("gl")))
                 row["p"] = total
                 row["y"] = reasons
                 row["st"] = src["standing"]
@@ -1952,8 +2257,23 @@ def run(dry_run=False, fixtures=None):
 
     fresh_urls = {canon_url(i["u"]) for i in items}
     for row in previous:
-        if "x" in row:
-            absorb(row)
+        if "x" not in row:
+            continue
+        # A retained story is placed again rather than carried forward with the
+        # answer it happened to get the day it was first read. RETAIN_DAYS is
+        # 45, so without this a change to the placement layer takes a month and
+        # a half to reach the map, and a story never re-fetched keeps its first
+        # answer for good. Rows already holding a point resolved from their own
+        # text are left alone; only the unplaced and the source-country
+        # approximations are reconsidered.
+        if not row.get("ll") or row.get("pa"):
+            _raw = ((row.get("t") or "") + " " + (row.get("s") or ""))
+            row["pn"], row["ll"], row["pa"] = point_for(
+                _raw.lower(), row.get("pl") or [], row.get("sr") or [],
+                row.get("w") or [], row.get("gl"), _raw)
+            if row["ll"]:
+                file_by_country(row, country_for(_raw, row.get("gl")))
+        absorb(row)
 
     cutoff = int(time.time() * 1000) - RETAIN_DAYS * 86400000
     items = [i for i in items if (i.get("d") or cutoff + 1) >= cutoff]
